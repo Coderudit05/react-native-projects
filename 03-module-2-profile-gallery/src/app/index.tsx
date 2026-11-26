@@ -1,17 +1,23 @@
-import { Text, View, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function Index() {
+const classes = [
+  { id: "c1", subject: "JavaScript", room: 101 },
+  { id: "c2", subject: "React Native", room: 204 },
+  { id: "c3", subject: "Python", room: 305 },
+];
+
+const index = () => {
   return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+    <View style={{ padding: 10 }}>
+      {classes.map((item) => (
+        <Text key={item.id}>
+          {item.subject} - Room {item.room}
+        </Text>
+      ))}
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default index;
+
+const styles = StyleSheet.create({});
